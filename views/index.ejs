@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.......</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-        .login-btn { background-color: #00B900; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-        .message { font-size: 2em; color: #ff4081; }
-        .user-info { margin-top: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday App</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .login-btn { display: inline-block; padding: 10px 20px; background-color: #00C300; color: white; text-decoration: none; border-radius: 5px; }
+    .logout-btn { display: inline-block; margin-top: 20px; color: gray; }
+    h1 { color: #E83E8C; }
+  </style>
 </head>
 <body>
-    <% } else { %>
-        <p></p>
-        <a href="/login" class="login-btn">LINEでログイン</a>
+
+  <% if (user) { %>
+    <% if (message) { %>
+      <h1><%= user.displayName %>さん、<br><%= message %></h1>
     <% } %>
+    
+    <a href="/logout" class="logout-btn">ログアウト</a>
+
+  <% } else { %>
+    <h2>LINEでログインしてください</h2>
+    <a href="/login" class="login-btn">LINEログイン</a>
+  <% } %>
 
 </body>
 </html>
